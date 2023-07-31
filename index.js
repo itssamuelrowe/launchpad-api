@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
     res.setHeader('Content-Disposition', 'inline; filename=blablabla');
     res.setHeader('Content-Transfer-Encoding', 'binary');
     res.setHeader('Accept-Ranges', 'bytes');
+    res.setHeader("ngrok-skip-browser-warning", "true");
 
     // Stream the PDF file to the response
     fs.createReadStream(file).pipe(res);
